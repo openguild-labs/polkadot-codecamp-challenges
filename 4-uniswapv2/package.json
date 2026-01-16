@@ -24,7 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "@parity/hardhat-polkadot": "^0.1.9",
+    "@parity/hardhat-polkadot": "^0.2.6",
     "@types/node": "^24.10.1",
     "dockerode": "^4.0.9",
     "dotenv": "^17.2.3",

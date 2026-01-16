@@ -1,0 +1,18 @@
+{
+  "version": 0,
+  "descriptorPath": ".papi/descriptors",
+  "entries": {
+    "paseo": {
+      "chain": "paseo",
+      "metadata": ".papi/metadata/paseo.scale",
+      "genesis": "0x77afd6190f1554ad45fd0d31aee62aacc33c6db0ea801129acb813f913e0764f",
+      "codeHash": "0xbe23bf1f10e3704e762c9f3533f36645a286af995a52efd6eb784c81af4dbc9c"
+    },
+    "paseo_asset_hub": {
+      "chain": "paseo_asset_hub",
+      "metadata": ".papi/metadata/paseo_asset_hub.scale",
+      "genesis": "0xd6eec26135305a8ad257a20d003357284c8aa03d0bdb2b357ab0a22371e11ef2",
+      "codeHash": "0x580f8c8474f117c97f7027f89598e7dfa83d1c9cb5cdd24aee121a70787be206"
+    }
+  }
+}

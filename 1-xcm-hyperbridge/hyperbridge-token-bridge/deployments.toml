@@ -1,0 +1,14 @@
+# Sepolia Ethereum Testnet
+[sepolia]
+endpoint_url = "https://1rpc.io/sepolia"
+token_gateway = "0xFcDa26cA021d5535C3059547390E6cCd8De7acA6"
+usd_fee_token = "0xA801da100bF16D07F668F4A49E1f71fc54D05177"
+token_faucet = "0x1794aB22388303ce9Cb798bE966eeEBeFe59C3a3"
+
+# Optimism Sepolia Testnet
+[optimism-sepolia]
+endpoint_url = "https://sepolia.optimism.io"
+token_gateway = "0xFcDa26cA021d5535C3059547390E6cCd8De7acA6"
+usd_fee_token = "0xA801da100bF16D07F668F4A49E1f71fc54D05177"
+token_faucet = "0x1794aB22388303ce9Cb798bE966eeEBeFe59C3a3"
+weth = "0x4200000000000000000000000000000000000006"

@@ -1,0 +1,3 @@
+[submodule "1-xcm-hyperbridge/hyperbridge-token-bridge/lib/openzeppelin-contracts"]
+	path = 1-xcm-hyperbridge/hyperbridge-token-bridge/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts

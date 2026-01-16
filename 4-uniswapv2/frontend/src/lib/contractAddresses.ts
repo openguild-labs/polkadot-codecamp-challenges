@@ -1,0 +1,10 @@
+// Deployed contract addresses from DEPLOYMENT.md
+export const contractAddresses = {
+    TOKEN_FAUCET: "0xd9e256cD6aaC860955d9f36F2a460D0310C4107B",
+    HARRY_TOKEN: "0xA8F30E8941A9fB41f613E61C4E8CC7ef12b972Fe",
+    RIDDLE_TOKEN: "0x29278c594F0898e004f4bE755E1b3761C4d88112",
+    UNISWAP_V2_FACTORY: "0x9Df9FcCbe3116Ba85Ba0D1FcDdC18Cad08c64351",
+    UNISWAP_V2_PAIR: "0x7090BAC7a9514512F04394133d26aB5618d41EA5",
+} as const;
+
+export type ContractAddressKey = keyof typeof contractAddresses;

@@ -1,0 +1,44 @@
+[sepolia]
+endpoint_url= ""
+
+[sepolia.address]
+token_gateway= "0x"
+bridgeable_token= "0x"
+fee_token= "0x"
+token_bridge= "0x"
+
+[sepolia.bridge_params]
+amount= "1000000000000000000000" # 1000 tokens (18 decimals)
+recipient= "0x" # Recipient address on destination chain
+dest_chain= "optimism-sepolia" # Destination chain name
+native_cost= "1000000000000000" # 0.001 ETH (in wei)
+
+[bsc-testnet]
+endpoint_url= ""
+
+[bsc-testnet.address]
+token_gateway= "0x"
+bridgeable_token= "0x"
+fee_token= "0x"
+token_bridge= "0x"
+
+[bsc-testnet.bridge_params]
+amount= "1000000000000000000000" # 1000 tokens (18 decimals)
+recipient= "0x" # Recipient address on destination chain
+dest_chain= "sepolia" # Destination chain name
+native_cost= "1000000000000000" # 0.001 ETH (in wei)
+
+[optimism-sepolia]
+endpoint_url= ""
+
+[optimism-sepolia.address]
+token_gateway= "0x"
+bridgeable_token= "0x"
+fee_token= "0x"
+token_bridge= "0x"
+
+[optimism-sepolia.bridge_params]
+amount= "1000000000000000000000" # 1000 tokens (18 decimals)
+recipient= "0x" # Recipient address on destination chain
+dest_chain= "sepolia" # Destination chain name
+native_cost= "1000000000000000" # 0.001 ETH (in wei)

@@ -7,6 +7,8 @@ import "./libraries/SafeMath.sol";
 contract UniswapV2ERC20 is IUniswapV2ERC20 {
     using SafeMath for uint;
 
+    address immutable faucet;
+
     string public constant name = "Uniswap V2";
     string public constant symbol = "UNI-V2";
     uint8 public constant decimals = 18;
@@ -23,7 +25,8 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
     // event Approval(address indexed owner, address indexed spender, uint value);
     // event Transfer(address indexed from, address indexed to, uint value);
 
-    constructor() {
+    constructor(address _faucet) {
+        faucet = _faucet;
         uint chainId;
         assembly {
             chainId := chainid()
@@ -120,5 +123,10 @@ contract UniswapV2ERC20 is IUniswapV2ERC20 {
             "UniswapV2: INVALID_SIGNATURE"
         );
         _approve(owner, spender, value);
+    }
+
+    function mint(address to, uint256 amount) external {
+        require(msg.sender == faucet && msg.sender != address(0), "UniswapV2: FORBIDDEN");
+        _mint(to, amount);
     }
 }

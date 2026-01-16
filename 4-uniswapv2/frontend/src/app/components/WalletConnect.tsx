@@ -97,6 +97,7 @@ const WalletConnect: React.FC<WalletConnectProps> = ({ onConnect }) => {
 
   const switchNetwork = async () => {
     console.log('Switch network')
+    if (!window.ethereum) return;
     try {
       await window.ethereum.request({
         method: 'wallet_switchEthereumChain',
@@ -105,6 +106,7 @@ const WalletConnect: React.FC<WalletConnectProps> = ({ onConnect }) => {
     } catch (switchError: any) {
       // Error 4902 means the chain hasn't been added to MetaMask
       if (switchError.code === 4902) {
+        if (!window.ethereum) return;
         try {
           await window.ethereum.request({
             method: 'wallet_addEthereumChain',
