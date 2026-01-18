@@ -24,10 +24,17 @@ Replace the `[name-of-your-account]` with your Github username. For example, if 
 git clone https://github.com/openguild-labs/polkadot-codecamp-challenges.git
 ```
 
+- Step 4: Edit the `README.md` file to register for official participation
+
+Go to **Participant Registration** section and register to be the workshop participants. Add the below to the list, replace any placeholder with your personal information.
+
+```
 | 🦄 | Bryan | harkon666 | Student |
 ```
 
 - Step 5: `Commit` your code and push to the forked Github repository
+
+```
 git add .
 git commit -m "<Your Name> | Register for Polkadot Codecamp"
 ```
