@@ -1,0 +1,17 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        { "internalType": "address", "name": "token", "type": "address" },
+        { "internalType": "string", "name": "symbol", "type": "string" },
+        { "internalType": "uint256", "name": "amount", "type": "uint256" },
+        { "internalType": "address", "name": "recipient", "type": "address" },
+        { "internalType": "bytes", "name": "destChain", "type": "bytes" }
+      ],
+      "name": "bridgeTokens",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    }
+  ]
+}

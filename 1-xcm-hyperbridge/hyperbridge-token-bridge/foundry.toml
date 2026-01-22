@@ -1,0 +1,10 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+gas_price = 3000000000
+
+[rpc_endpoints]
+paseo = "https://testnet-passet-hub-eth-rpc.polkadot.io"
+sepolia = "https://eth-sepolia-testnet.api.pocket.network"
+bsc = "https://bsc-testnet-rpc.publicnode.com"
