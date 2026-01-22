@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@polkadot/util": "^14.0.1",
+    "@polkadot/util-crypto": "^14.0.1",
+    "ethers": "^6.16.0"
+  }
+}
