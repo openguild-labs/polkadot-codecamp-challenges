@@ -1,0 +1,1 @@
+bridge address = 0x6a7EDD974851055367763B92fec281d118E54e90 

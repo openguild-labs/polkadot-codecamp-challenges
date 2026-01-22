@@ -1,117 +1,121 @@
-const hre = require('hardhat')
-const prompts = require('prompts')
+const hre = require("hardhat");
+
+const FACTORY_ADDR = "0x2a62566645eD08f04cfA719052Dd037F4f64C71c";
+const TOKEN_A_ADDR = "0xeF9A6Dc13455C406E3d0859936B1DAbfF7321a7d";
+const TOKEN_B_ADDR = "0x9FeDBF468CCCE7E8b316CAb167Dc85e8c99FD1EF";
 
 async function main() {
-    // Get contract address from command line argument or environment variable
-    let contractAddress = process.env.CONTRACT_ADDRESS || process.argv[2]
+  const [deployer] = await hre.ethers.getSigners();
+  console.log("👤 Interact wallet:", deployer.address);
 
-    if (!contractAddress || contractAddress === 'INSERT_CONTRACT_ADDRESS') {
-        const response = await prompts({
-            type: 'text',
-            name: 'address',
-            message: 'Enter the Counter contract address:',
-            validate: (value) =>
-                value.startsWith('0x') && value.length === 42
-                    ? true
-                    : 'Please enter a valid Ethereum address',
-        })
+  const tokenA = await hre.ethers.getContractAt("MyERC20", TOKEN_A_ADDR);
+  const tokenB = await hre.ethers.getContractAt("MyERC20", TOKEN_B_ADDR);
+  const factory = await hre.ethers.getContractAt(
+    "UniswapV2Factory",
+    FACTORY_ADDR,
+  );
 
-        if (!response.address) {
-            console.log('Operation cancelled')
-            process.exit(0)
-        }
+  console.log("\n--- 🔍 BALANCE CHECK ---");
+  let balA = await tokenA.balanceOf(deployer.address);
+  let balB = await tokenB.balanceOf(deployer.address);
 
-        contractAddress = response.address
+  console.log(`💰 Token A Balance: ${hre.ethers.formatEther(balA)}`);
+  console.log(`💰 Token B Balance: ${hre.ethers.formatEther(balB)}`);
+
+  if (balA < hre.ethers.parseEther("100")) {
+    console.log("⚠️ Not enough Token A. minting...");
+    try {
+      const tx = await tokenA.mint(
+        deployer.address,
+        hre.ethers.parseEther("1000"),
+      );
+      await tx.wait();
+      console.log("✅ Minted 1000 TokenA");
+    } catch (e) {
+      console.error("❌ Error.");
     }
+  }
 
-    // Get the contract factory
-    const Counter = await hre.ethers.getContractFactory('Counter')
-
-    // Attach to existing contract
-    const counter = Counter.attach(contractAddress)
-
-    // Get signers
-    const [deployer] = await hre.ethers.getSigners()
-
-    console.log('\n📝 Counter Contract Interaction')
-    console.log('================================')
-    console.log('Contract:', contractAddress)
-    console.log('Account:', deployer.address)
-    console.log('Network:', hre.network.name)
-    console.log('================================\n')
-
-    let running = true
-
-    while (running) {
-        // Get current count
-        const currentCount = await counter.getCount()
-        console.log(`Current count: ${currentCount.toString()}\n`)
-
-        const action = await prompts({
-            type: 'select',
-            name: 'value',
-            message: 'What would you like to do?',
-            choices: [
-                { title: 'Increment counter', value: 'increment' },
-                { title: 'Decrement counter', value: 'decrement' },
-                { title: 'Reset counter (owner only)', value: 'reset' },
-                { title: 'View owner', value: 'owner' },
-                { title: 'Exit', value: 'exit' },
-            ],
-        })
-
-        if (!action.value || action.value === 'exit') {
-            console.log('\n👋 Goodbye!')
-            running = false
-            break
-        }
-
-        try {
-            switch (action.value) {
-                case 'increment':
-                    console.log('\n⏳ Incrementing counter...')
-                    const incrementTx = await counter.increment()
-                    await incrementTx.wait()
-                    console.log('✅ Transaction confirmed:', incrementTx.hash)
-                    const newCount = await counter.getCount()
-                    console.log(`New count: ${newCount.toString()}\n`)
-                    break
-
-                case 'decrement':
-                    console.log('\n⏳ Decrementing counter...')
-                    const decrementTx = await counter.decrement()
-                    await decrementTx.wait()
-                    console.log('✅ Transaction confirmed:', decrementTx.hash)
-                    const decrementedCount = await counter.getCount()
-                    console.log(`New count: ${decrementedCount.toString()}\n`)
-                    break
-
-                case 'reset':
-                    console.log('\n⏳ Resetting counter...')
-                    const resetTx = await counter.reset()
-                    await resetTx.wait()
-                    console.log('✅ Transaction confirmed:', resetTx.hash)
-                    const resetCount = await counter.getCount()
-                    console.log(`New count: ${resetCount.toString()}\n`)
-                    break
-
-                case 'owner':
-                    const owner = await counter.owner()
-                    console.log('\n👤 Contract owner:', owner)
-                    console.log(
-                        'Is current account owner?',
-                        owner.toLowerCase() === deployer.address.toLowerCase() ? 'Yes ✅' : 'No ❌'
-                    )
-                    console.log()
-                    break
-            }
-        } catch (error) {
-            console.error('\n❌ Error:', error.message, '\n')
-        }
+  if (balB < hre.ethers.parseEther("100")) {
+    console.log("⚠️ Not enough Token B...");
+    try {
+      const tx = await tokenB.mint(
+        deployer.address,
+        hre.ethers.parseEther("1000"),
+      );
+      await tx.wait();
+      console.log("✅ Minted 1000 Token B!");
+    } catch (e) {
+      console.error("❌ Error.");
     }
+  }
+
+  balA = await tokenA.balanceOf(deployer.address);
+  balB = await tokenB.balanceOf(deployer.address);
+
+  if (balA == 0n || balB == 0n) {
+    console.error("Error!");
+    return;
+  }
+
+  console.log("\n--- 1. CREATE PAIR ---");
+  let pairAddress = await factory.getPair(TOKEN_A_ADDR, TOKEN_B_ADDR);
+  if (pairAddress === "0x0000000000000000000000000000000000000000") {
+    console.log("Creating Pair...");
+    const tx = await factory.createPair(TOKEN_A_ADDR, TOKEN_B_ADDR);
+    await tx.wait();
+    pairAddress = await factory.getPair(TOKEN_A_ADDR, TOKEN_B_ADDR);
+  }
+  console.log("✅ Pair Address:", pairAddress);
+
+  console.log("\n--- 2. ADD LIQUIDITY ---");
+  const pair = await hre.ethers.getContractAt("UniswapV2Pair", pairAddress);
+
+  const lpBalance = await pair.balanceOf(deployer.address);
+  if (lpBalance > 0n) {
+    console.log(" Have LP Token.");
+  } else {
+    console.log("Approving & Transferring...");
+    try {
+      await (
+        await tokenA.transfer(pairAddress, hre.ethers.parseEther("100"))
+      ).wait();
+      await (
+        await tokenB.transfer(pairAddress, hre.ethers.parseEther("100"))
+      ).wait();
+      console.log("Minting LP...");
+      await (await pair.mint(deployer.address)).wait();
+      console.log("✅ Liquidity Added!");
+    } catch (error) {
+      console.error("❌ Error Add Liquidity:", error.message);
+    }
+  }
+
+  console.log("\n--- 3. SWAP ---");
+  console.log("Transferring Token A for Swap...");
+  try {
+    await (
+      await tokenA.transfer(pairAddress, hre.ethers.parseEther("10"))
+    ).wait();
+
+    const token0 = await pair.token0();
+    const amountOut = hre.ethers.parseEther("5");
+    const amount0Out =
+      token0.toLowerCase() === TOKEN_A_ADDR.toLowerCase() ? 0n : amountOut;
+    const amount1Out =
+      token0.toLowerCase() === TOKEN_A_ADDR.toLowerCase() ? amountOut : 0n;
+
+    console.log("Calling Swap...");
+    await (
+      await pair.swap(amount0Out, amount1Out, deployer.address, "0x")
+    ).wait();
+    console.log("✅ Swap Complete!");
+  } catch (error) {
+    console.error("❌ Error Swap:", error.message);
+  }
 }
 
 main().catch((error) => {
-    console.error(error)
-    process.exitCode = 1
-})
+  console.error(error);
+  process.exitCode = 1;
+});

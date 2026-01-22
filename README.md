@@ -1,7 +1,6 @@
+| 🦄 | Thong Tran | matsu-may | Fullstack developer |
 
-
-# Polkadot Codecamp by OpenGuild 
-
+# Polkadot Codecamp by OpenGuild
 
 ## (Optional) Setup environment and register for the challenges
 
@@ -51,12 +50,12 @@ git commit -m "<Your Name> | Register for Polkadot Codecamp"
 
 <br/>
 
-| Challenge | Description | Action | Bounty |
-| --------- | ----------- | ------ | ------ |
-| 1 | Cross-chain Solidity Smart Contract with XCM + Hyperbridge - Walk through XCM and Hyperbridge and how to use them on the smart contract side | [Take Challenge](./1-xcm-hyperbridge/README.md) | $ |
-| 2 | Building a Polkadot AI app with Polkadot Agent Kit - Using the polkadot-agent-kit tool to build the AI-powered cross-chain applications | [Take Challenge](./2-polkadot-agent-kit/README.md) | $ |
-| 3 | Full-stack development with Scaffold DOT - Guide participants to build and deploy a full-stack Polkadot application using Scaffold-DOT and deploy on Polkadot testnet | [Take Challenge](3-scaffold-dot/README.md) | $ |
-| 4 | Building a Uniswap V2 DEX on Polkadot Hub - Give reference to the existing Uniswap V2 contracts and guide users to build a Uniswap V2 DEX with UI + contracts | [Take Challenge](4-uniswapv2/README.md) | $ |
+| Challenge | Description                                                                                                                                                           | Action                                             | Bounty |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------- | ------ |
+| 1         | Cross-chain Solidity Smart Contract with XCM + Hyperbridge - Walk through XCM and Hyperbridge and how to use them on the smart contract side                          | [Take Challenge](./1-xcm-hyperbridge/README.md)    | $      |
+| 2         | Building a Polkadot AI app with Polkadot Agent Kit - Using the polkadot-agent-kit tool to build the AI-powered cross-chain applications                               | [Take Challenge](./2-polkadot-agent-kit/README.md) | $      |
+| 3         | Full-stack development with Scaffold DOT - Guide participants to build and deploy a full-stack Polkadot application using Scaffold-DOT and deploy on Polkadot testnet | [Take Challenge](3-scaffold-dot/README.md)         | $      |
+| 4         | Building a Uniswap V2 DEX on Polkadot Hub - Give reference to the existing Uniswap V2 contracts and guide users to build a Uniswap V2 DEX with UI + contracts         | [Take Challenge](4-uniswapv2/README.md)            | $      |
 
 <br/>
 <br/>
@@ -76,8 +75,3 @@ OpenGuild is a builder-driven community centered around Polkadot. OpenGuild is b
 - **Website:** [OpenGuild Website](https://openguild.wtf/)
 - **Github:** [OpenGuild Labs](https://github.com/openguild-labs)
 - **Discord**: [Openguild Discord Channel](https://discord.gg/bcjMzxqtD7)
-
-
-
-
-

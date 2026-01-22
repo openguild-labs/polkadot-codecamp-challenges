@@ -17,8 +17,6 @@ const connectors = [
   subwalletConnector(),
   talismanConnector(),
   polkagateConnector(),
-  walletConnectConnector({ projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_ID }),
-  novaConnector({ projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_ID }),
 ];
 
 const lunoConfig = createConfig({
