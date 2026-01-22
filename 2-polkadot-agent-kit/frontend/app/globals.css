@@ -1,1 +1,147 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #0a0e27;
+  --foreground: #00ffff;
+  --card: #0d1229;
+  --card-foreground: #00d9ff;
+  --primary: #00ffff;
+  --primary-foreground: #0a0e27;
+  --secondary: #001a33;
+  --secondary-foreground: #00d9ff;
+  --accent: #0099ff;
+  --accent-foreground: #ffffff;
+  --border: #00ffff;
+  --muted: #1a2342;
+  --muted-foreground: #66d9ff;
+  --destructive: #ff0066;
+  --destructive-foreground: #ffffff;
+  --input: #0f1629;
+  --ring: #00ffff;
+  --chart-1: #00ffff;
+  --chart-2: #0099ff;
+  --chart-3: #00d9ff;
+  --chart-4: #0066ff;
+  --chart-5: #33ccff;
+  --radius: 1.5rem;
+  --sidebar: #0a0e27;
+  --sidebar-foreground: #00ffff;
+  --sidebar-primary: #00ffff;
+  --sidebar-primary-foreground: #0a0e27;
+  --sidebar-accent: #001a33;
+  --sidebar-accent-foreground: #00d9ff;
+  --sidebar-border: #00ffff;
+  --sidebar-ring: #00ffff;
+}
+
+.dark {
+  --background: #050810;
+  --foreground: #00ffff;
+  --card: #0a0e27;
+  --card-foreground: #00ffff;
+  --popover: #0a0e27;
+  --popover-foreground: #00ffff;
+  --primary: #00ffff;
+  --primary-foreground: #050810;
+  --secondary: #001122;
+  --secondary-foreground: #00d9ff;
+  --muted: #0f1629;
+  --muted-foreground: #66d9ff;
+  --accent: #0099ff;
+  --accent-foreground: #ffffff;
+  --destructive: #ff0066;
+  --destructive-foreground: #ffffff;
+  --border: #00ffff;
+  --input: #0f1629;
+  --ring: #00ffff;
+  --chart-1: #00ffff;
+  --chart-2: #0099ff;
+  --chart-3: #00d9ff;
+  --chart-4: #0066ff;
+  --chart-5: #33ccff;
+  --sidebar: #050810;
+  --sidebar-foreground: #00ffff;
+  --sidebar-primary: #00ffff;
+  --sidebar-primary-foreground: #050810;
+  --sidebar-accent: #001122;
+  --sidebar-accent-foreground: #00d9ff;
+  --sidebar-border: #00ffff;
+  --sidebar-ring: #00ffff;
+}
+
+@theme inline {
+  --font-sans: "Inter", "Roboto", "SF Pro Display", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Source Code Pro", "Menlo", "Monaco", monospace;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-image: 
+      radial-gradient(circle at 20% 50%, rgba(0, 255, 255, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(0, 153, 255, 0.05) 0%, transparent 50%);
+    background-attachment: fixed;
+  }
+
+  /* Cyberpunk glow effects */
+  @supports (filter: drop-shadow(0 0 10px)) {
+    button, a, input:focus {
+      transition: filter 0.3s ease, box-shadow 0.3s ease;
+    }
+    button:hover, a:hover {
+      filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.6));
+    }
+  }
+
+  /* Cyberpunk text glow */
+  h1, h2, h3, h4, h5, h6 {
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+
+  /* Cyberpunk input placeholder */
+  input::placeholder {
+    color: #66d9ff;
+    opacity: 0.7;
+  }
+}
