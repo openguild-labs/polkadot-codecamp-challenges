@@ -1,0 +1,36 @@
+# dependencies
+node_modules
+
+# yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# eslint
+.eslintcache
+
+# misc
+.DS_Store
+
+# IDE
+.vscode
+.idea
+ 
+ 
+# cli
+dist
+
+# hardhat-polkadot
+/packages/hardhat/artifacts-pvm/*
+/packages/hardhat/cache-pvm/*
+
+# asset hub binaries
+packages/asset-hub-pvm/bin/
+
+packages/hardhat/ignition/deployments
+
+packages/nextjs/contracts/deployedContracts.ts
+
