@@ -4,22 +4,28 @@ import { useState } from "react";
 import WalletConnect from "./components/WalletConnect";
 import ReadContract from "./components/ReadContract";
 import WriteContract from "./components/WriteContract";
+import { Navbar } from "./components/Navbar";
+import { PoolAndLiquidity } from "./components/PoolAndLiquidity";
+import { Faucet } from "./components/Faucet";
+import { SwapCard } from "./components/SwapCard";
 
 export default function Home() {
-  const [account, setAccount] = useState<string | null>(null);
-
-  const handleConnect = (connectedAccount: string) => {
-    setAccount(connectedAccount);
-  };
-
+  const [activeTab, setActiveTab] = useState("swap")
   return (
-    <section className="min-h-screen bg-white text-black flex flex-col justify-center items-center gap-4 py-10">
-      <h1 className="text-2xl font-semibold text-center">
-        Viem dApp - Passet Hub Smart Contracts
-      </h1>
-      <WalletConnect onConnect={handleConnect} />
-      <ReadContract />
-      <WriteContract account={account} />
-    </section>
+    <main className="min-h-screen bg-white pb-20">
+      <div
+        className="fixed inset-0 pointer-events-none opacity-[0.03]"
+        style={{ backgroundImage: "radial-gradient(#000 1px, transparent 1px)", backgroundSize: "20px 20px" }}
+      />
+
+      <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
+
+      <div className="relative z-10">
+        {activeTab === "swap" && <SwapCard />}
+        {activeTab === "pool" && <PoolAndLiquidity />}
+        {activeTab === "faucet" && <Faucet />}
+      </div>
+
+    </main>
   );
 }

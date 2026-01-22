@@ -1,0 +1,9 @@
+Deploying with account: 0x02Ca485F8a1c8B532F7EA5121723588f6a25AAE0
+Token TokenA deployed to: 0x0FE3F764b4808Eb3E37Ed1CD9ada5e2bA9882e2c
+Token TokenB deployed to: 0xb5Bfbf64DB4cAeDFEAeE04E7F7653697B8FE4158
+Deploying UniswapV2Factory...
+Factory deployed to: 0xe5Cb42Fe89AEb31Ea610661D002e930CDAb85cD2
+Using RPC URL: https://testnet-passet-hub-eth-rpc.polkadot.io
+Pair deployed to: 0xbDB54B1767AAC57EE96ae3509A2eAea6E88a5883
+Creating pair for 0x0FE3F764b4808Eb3E37Ed1CD9ada5e2bA9882e2c and 0xb5Bfbf64DB4cAeDFEAeE04E7F7653697B8FE4158...
+Pair created at address: 0x6F3968c00f99565A02aDbA94273704c1901759e3

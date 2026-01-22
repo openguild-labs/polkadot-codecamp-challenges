@@ -65,8 +65,8 @@ yarn start
 
 ## Requirements 
 
-- [ ] **Add ERC20 example**
-- [ ] **Add ERC721 examples**
+- [x] **Add ERC20 example**
+- [x] **Add ERC721 examples**
 
 
 ### Example UI
@@ -111,7 +111,7 @@ cocdap@Hos-MacBook-Pro scaffold-dot % yarn deploy
 
 ## Submission Requirements 
 
-- [ ] **Accessible video recording link demonstrating ERC20 and ERC721 examples on Debug Scaffold DOT**
+- [x] **Accessible video recording link demonstrating ERC20 and ERC721 examples on Debug Scaffold DOT**
 
 
 ## Resources 

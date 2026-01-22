@@ -1,0 +1,14 @@
+[
+    {
+        "ChainName": "Base Testnet",
+        "ChainId": 84532,
+        "BridgeableToken": "0x3A4Eca06BE37ffb032E7D1276f2afa7C0201cA88",
+        "TokenBridge": "0x55E07c278416fD1f06fEba3a525C264DbD1f3bD5"
+    },
+    {
+        "ChainName": "BSC Testnet",
+        "ChainId": 97,
+        "BridgeableToken": "0xA11463f9489aB75B9eb2b24D9842DbD5F9C36862",
+        "TokenBridge": "0xA3A861d8fd9270E188B1594C9CE477C2e98519d5"
+    }
+]
