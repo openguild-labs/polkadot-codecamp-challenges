@@ -1,0 +1,6 @@
+{
+	"network": "Paseo Asset Hub Testnet",
+	"rpcUrl": "https://testnet-passet-hub-eth-rpc.polkadot.io",
+	"factory": "0x1014aD68226B932b61df3d20ad78582537B344b7",
+	"pair": "0x75803F40cCC6d04A7AC090f8ba4e56aD9EffAd32"
+}
