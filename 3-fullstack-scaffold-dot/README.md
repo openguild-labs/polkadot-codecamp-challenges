@@ -109,9 +109,21 @@ cocdap@Hos-MacBook-Pro scaffold-dot % yarn deploy
 
 - Go to `UI Debug` to check function 
 
-## Submission Requirements 
+## Submission Requirements
 
 - [ ] **Accessible video recording link demonstrating ERC20 and ERC721 examples on Debug Scaffold DOT**
+
+
+## My Submission
+
+- **Demo Video**: [https://youtu.be/d34JqEFFmUg](https://youtu.be/d34JqEFFmUg)
+- **Scaffold DOT Fork**: [https://github.com/rifuki/scaffold-dot](https://github.com/rifuki/scaffold-dot)
+
+### Contracts Added:
+| Contract | Type | Name | Symbol |
+|----------|------|------|--------|
+| `MikuToken.sol` | ERC20 | Hatsune Miku | MIKU |
+| `MikuNFT.sol` | ERC721 | Hatsune Miku | MIKU |
 
 
 ## Resources 
