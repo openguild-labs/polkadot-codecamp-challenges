@@ -47,6 +47,14 @@ The app will be available at `http://localhost:5173`.
    - The bridge process typically takes **2-5 minutes**.
    - Watch the **"Your Balances on Destination Chains"** section. The balance for the target chain will update automatically once the tokens arrive.
 
+## 📺 Demo & Screenshots
+
+### Video Walkthrough
+[![Watch the Demo](https://img.youtube.com/vi/taGqbYN6tnE/0.jpg)](https://youtu.be/taGqbYN6tnE)
+
+### Application Screenshot
+![App Screenshot-XCM-Hyperbridge](./public/ss-submission-xcm.png)
+
 ## 🔧 Configuration
 
 Key configuration files:
