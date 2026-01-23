@@ -18,11 +18,13 @@ contract TokenBridge {
 
     /// @notice Bridge tokens to another chain
     /// @param token The token address to bridge
+    /// @param symbol The token symbol to bridge
     /// @param amount The amount to bridge
     /// @param recipient The recipient address on the destination chain
     /// @param destChain The destination chain identifier
     function bridgeTokens(
         address token,
+        string memory symbol,
         uint256 amount,
         address recipient,
         bytes memory destChain
@@ -33,14 +35,14 @@ contract TokenBridge {
             address(TOKEN_GATEWAY),
             type(uint256).max
         );
-        bytes32 assetId = bytes32(uint256(uint160(token)));
+        bytes32 assetId = keccak256(abi.encodePacked(symbol));
         bytes32 recipientId = bytes32(uint256(uint160(recipient)));
 
         TeleportParams memory params = TeleportParams({
             amount: amount,
             relayerFee: 0,
             assetId: assetId,
-            redeem: true,
+            redeem: false,
             to: recipientId,
             dest: destChain,
             timeout: 0,
