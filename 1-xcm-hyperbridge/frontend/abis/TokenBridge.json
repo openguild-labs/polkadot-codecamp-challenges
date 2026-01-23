@@ -1,0 +1,35 @@
+[
+    {
+  "inputs": [
+    {
+      "internalType": "address",
+      "name": "token",
+      "type": "address"
+    },
+    {
+      "internalType": "string",
+      "name": "symbol",
+      "type": "string"
+    },
+    {
+      "internalType": "uint256",
+      "name": "amount",
+      "type": "uint256"
+    },
+    {
+      "internalType": "bytes32",
+      "name": "recipient",
+      "type": "bytes32"
+    },
+    {
+      "internalType": "bytes",
+      "name": "destChain",
+      "type": "bytes"
+    }
+  ],
+  "name": "bridgeTokens",
+  "outputs": [],
+  "stateMutability": "payable",
+  "type": "function"
+}
+]
