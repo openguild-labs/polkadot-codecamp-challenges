@@ -102,8 +102,8 @@ agent.addCustomTools([voteAction]);
 
 ## Submission Requirements
 
-  * [ ] Create AI-powered cross-chain applications using `polkadot-agent-kit`.
-  * [ ] Use `LunoKit` to integrate Wallet , show all accounts and Connected Chain
-  * [ ] Link github project 
-  * [ ] Recording Video to demo 
+  * [x] Create AI-powered cross-chain applications using `polkadot-agent-kit`.
+  * [x] Use `LunoKit` to integrate Wallet , show all accounts and Connected Chain
+  * [x] Link github project 
+  * [x] Recording Video to demo 
 
