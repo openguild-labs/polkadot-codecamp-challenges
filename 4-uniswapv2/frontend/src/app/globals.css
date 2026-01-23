@@ -1,26 +1,164 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@custom-variant dark (&:is(.dark *));
+
+/* Overriding theme tokens to match a "Blueprint / Technical Drawing" style.
+  Using deep blues and bright cyan/white lines.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Blueprint Light Mode: Thể hiện như bản nháp trên giấy can */
+  --background: oklch(0.96 0.02 240);
+  --foreground: oklch(0.25 0.08 245);
+  --card: oklch(0.98 0.01 240);
+  --card-foreground: oklch(0.25 0.08 245);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+  --primary: oklch(0.45 0.15 245); /* Blueprint Blue */
+  --primary-foreground: oklch(0.98 0.01 245);
+  --secondary: oklch(0.9 0.03 245);
+  --secondary-foreground: oklch(0.3 0.1 245);
+  --muted: oklch(0.92 0.02 240);
+  --muted-foreground: oklch(0.5 0.05 245);
+  --accent: oklch(0.45 0.15 245 / 0.1);
+  --accent-foreground: oklch(0.45 0.15 245);
+  --destructive: oklch(0.6 0.18 25);
+  --destructive-foreground: #ffffff;
+  --border: oklch(0.45 0.15 245 / 0.3);
+  --input: oklch(0.45 0.15 245 / 0.2);
+  --ring: oklch(0.45 0.15 245);
+  --radius: 0px; /* Thẩm mỹ kỹ thuật thường vuông vức */
+  
+  /* Sidebar blueprint tokens */
+  --sidebar: oklch(0.94 0.03 240);
+  --sidebar-foreground: oklch(0.25 0.08 245);
+  --sidebar-primary: oklch(0.45 0.15 245);
+  --sidebar-primary-foreground: oklch(0.98 0.01 245);
+  --sidebar-accent: oklch(0.45 0.15 245 / 0.15);
+  --sidebar-accent-foreground: oklch(0.45 0.15 245);
+  --sidebar-border: oklch(0.45 0.15 245 / 0.2);
+  --sidebar-ring: oklch(0.45 0.15 245);
+}
+
+.dark {
+  /* Classic Blueprint: Nền xanh đậm, nét trắng/cyan */
+  --background: oklch(0.2 0.08 245);
+  --foreground: oklch(0.9 0.05 245);
+  --card: oklch(0.22 0.08 245);
+  --card-foreground: oklch(0.9 0.05 245);
+  --popover: oklch(0.18 0.08 245);
+  --popover-foreground: oklch(0.9 0.05 245);
+  --primary: oklch(0.85 0.12 200); /* Cyan-like stroke */
+  --primary-foreground: oklch(0.2 0.08 245);
+  --secondary: oklch(0.3 0.08 245);
+  --secondary-foreground: oklch(0.9 0.05 245);
+  --muted: oklch(0.25 0.06 245);
+  --muted-foreground: oklch(0.7 0.05 245);
+  --accent: oklch(0.85 0.12 200 / 0.15);
+  --accent-foreground: oklch(0.85 0.12 200);
+  --destructive: oklch(0.65 0.2 30);
+  --destructive-foreground: oklch(0.98 0.01 30);
+  --border: oklch(0.85 0.12 200 / 0.4);
+  --input: oklch(0.85 0.12 200 / 0.2);
+  --ring: oklch(0.85 0.12 200);
 }
 
 @theme inline {
+  --font-sans: "JetBrains Mono", "Fira Code", monospace; /* Font code/kỹ thuật */
+  --font-mono: "Courier New", monospace;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  /* ... giữ nguyên các mapping biến cũ của bạn ... */
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-md: 0px;
+  --radius-lg: 0px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-border/50;
+  }
+  body {
+    /* Thêm Grid pattern cho background giống giấy kẻ ô kỹ thuật */
+    background-image: 
+      linear-gradient(var(--border) 1px, transparent 1px),
+      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 20px 20px;
+    @apply bg-background text-foreground font-sans;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Custom Blueprint-style utility classes.
+  Thay đổi từ "vẽ tay" sang "vẽ thước kẻ/kỹ thuật".
+*/
+.sketch-border {
+  border: 1px solid currentColor;
+  position: relative;
+}
+
+/* Hiệu ứng góc thước kẻ (Corner marks) */
+.sketch-border::before {
+  content: "";
+  position: absolute;
+  top: -5px; left: -5px; width: 10px; height: 10px;
+  border-left: 1px solid currentColor;
+  border-top: 1px solid currentColor;
+}
+
+.sketch-button {
+  border: 1px solid currentColor;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  @apply bg-transparent hover:bg-primary hover:text-primary-foreground transition-all;
+}
+
+.sketch-card {
+  border: 1px solid var(--border);
+  background-color: var(--card);
+  /* Đổ bóng kiểu layer kỹ thuật */
+  box-shadow: 4px 4px 0px 0px var(--border);
+}
+
+/* Highlighter chuyển thành màu "Draft" hoặc "Annotation" */
+.sketch-highlight-pink {
+  background-color: oklch(0.8 0.15 350 / 0.3);
+}
+
+.sketch-highlight-blue {
+  background-color: oklch(0.7 0.15 210 / 0.3);
+}
+
+.sketch-highlight-yellow {
+  background-color: oklch(0.9 0.15 90 / 0.3);
+}
+
+.sketch-marker {
+  text-decoration: underline;
+  text-decoration-style: double;
+  @apply text-primary;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
