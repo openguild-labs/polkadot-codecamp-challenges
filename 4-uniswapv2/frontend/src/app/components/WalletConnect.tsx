@@ -97,6 +97,7 @@ const WalletConnect: React.FC<WalletConnectProps> = ({ onConnect }) => {
 
   const switchNetwork = async () => {
     console.log('Switch network')
+    if (!window.ethereum) return;
     try {
       await window.ethereum.request({
         method: 'wallet_switchEthereumChain',
