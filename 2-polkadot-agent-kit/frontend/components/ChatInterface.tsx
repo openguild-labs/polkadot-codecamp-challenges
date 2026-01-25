@@ -10,7 +10,7 @@ interface Message {
 
 export default function ChatInterface() {
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'assistant', content: 'Hello! I am your Polkadot AI Agent. You can ask me to stake DOT, check balances, or transfer tokens.' }
+    { role: 'assistant', content: 'Hello! I am your Polkadot AI Agent Governance. You can ask me to vote on proposals. aye or nay' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
