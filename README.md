@@ -30,6 +30,7 @@ Go to **Participant Registration** section and register to be the workshop parti
 
 ```
 | 🦄 | Name | Github username | Your current occupation |
+| 🦄 | Andrei Steven Dela Cruz | andreistvn | CS Student |
 ```
 
 - Step 5: `Commit` your code and push to the forked Github repository
