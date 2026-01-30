@@ -1,0 +1,208 @@
+[00:00:01.197] Server  LOG     ✓ Ready in 798ms
+[00:00:04.484] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.807] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <HotReload globalError={[...]} webSocket={WebSocket} staticIndicatorState={{pathname:null, ...}}>
+      <AppDevOverlayErrorBoundary globalError={[...]}>
+        <ReplaySsrOnlyErrors>
+        <DevRootHTTPAccessFallbackBoundary>
+          <HTTPAccessFallbackBoundary notFound={<NotAllowedRootHTTPFallbackError>}>
+            <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<NotAllowedRootHTTPFallbackError>} ...>
+              <RedirectBoundary>
+                <RedirectErrorBoundary router={{...}}>
+                  <Head>
+                  <__next_root_layout_boundary__>
+                    <SegmentViewNode type="layout" pagePath="layout.tsx">
+                      <SegmentTrieNode>
+                      <link>
+                      <script>
+                      <RootLayout>
+                        <html
+                          lang="en"
+-                         data-redeviation-bs-uid="eqwvfykwhro"
+                        >
+                  ...
+
+[00:00:08.937] Browser LOG     Current chainId: null
+[00:00:10.336] Browser ERROR   unhandledRejection: Error: execution reverted: "ERC20: insufficient allowance" (action="estimateGas", data="0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000001d45524332303a20696e73756666696369656e7420616c6c6f77616e6365000000", reason="ERC20: insufficient allowance", transaction={ "data": "0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000005af3107a4000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000", "from": "0xCDEC43D8c276F14466f196D61453A314bc28c0ac", "to": "0xeC373E79FE65B09117e7a80058fd42c51f7E3289" }, invocation=null, revert={ "args": [ "ERC20: insufficient allowance" ], "name": "Error", "signature": "Error(string)" }, code=CALL_EXCEPTION, version=6.16.0)
+[00:04:59.940] Server  LOG     ✓ Compiled in 25ms
+[00:05:12.014] Server  LOG     ✓ Compiled in 13ms
+[00:05:12.233] Server  LOG     ✓ Compiled in 80ms
+[00:07:03.411] Server  LOG     ✓ Compiled in 42ms
+[00:07:16.878] Browser LOG     Đang approve 0.001 token cho bridge: 0x1e8e474701bbb119017c5659266087fa20470a77dc42ce1a127f645646c3e0
+[00:07:16.878] Browser ERROR   Lỗi khi Approve: {"code":"UNSUPPORTED_OPERATION","info":{"network":{"chainId":"97","name":"bnbt"}},"operation":"getEnsAddress","shortMessage":"network does not support ENS"}
+[00:07:18.836] Browser LOG     Đang approve 0.001 token cho bridge: 0x1e8e474701bbb119017c5659266087fa20470a77dc42ce1a127f645646c3e0
+[00:07:18.836] Browser ERROR   Lỗi khi Approve: {"code":"UNSUPPORTED_OPERATION","info":{"network":{"chainId":"97","name":"bnbt"}},"operation":"getEnsAddress","shortMessage":"network does not support ENS"}
+[00:07:22.212] Server  LOG     ✓ Compiled in 23ms
+[00:07:44.244] Server  LOG     ✓ Compiled in 12ms
+[00:09:58.879] Server  LOG     ✓ Compiled in 22ms
+[00:10:18.718] Server  LOG     ✓ Compiled in 25ms
+[00:10:21.817] Server  LOG     ✓ Compiled in 14ms
+[00:10:21.972] Server  LOG     ✓ Compiled in 12ms
+[00:10:22.143] Server  LOG     ✓ Compiled in 12ms
+[00:10:23.124] Server  LOG     ✓ Compiled in 22ms
+[00:10:45.675] Browser LOG     Đang Approve...
+[00:10:45.675] Browser LOG     Đang approve 0.0001 token cho bridge: 0x1e8e474701bbb119017c5659266087fa20470a77dc42ce1a127f645646c3e090
+[00:10:45.675] Browser ERROR   Lỗi khi Approve: {"code":"UNSUPPORTED_OPERATION","info":{"network":{"chainId":"97","name":"bnbt"}},"operation":"getEnsAddress","shortMessage":"network does not support ENS"}
+[00:10:45.675] Browser ERROR   Lỗi: {"code":"UNSUPPORTED_OPERATION","info":{"network":{"chainId":"97","name":"bnbt"}},"operation":"getEnsAddress","shortMessage":"network does not support ENS"}
+[00:11:51.747] Server  LOG     ✓ Compiled in 14ms
+[00:12:13.193] Browser LOG     Đang Approve...
+[00:12:13.193] Browser LOG     Đang approve 0.0001 token cho bridge: 0x1e8e474701bbb119017c5659266087fa20470a77dc42ce1a127f645646c3e090
+[00:12:13.193] Browser ERROR   Lỗi khi Approve: {"code":"UNSUPPORTED_OPERATION","info":{"network":{"chainId":"97","name":"bnbt"}},"operation":"getEnsAddress","shortMessage":"network does not support ENS"}
+[00:12:13.193] Browser ERROR   Lỗi: {"code":"UNSUPPORTED_OPERATION","info":{"network":{"chainId":"97","name":"bnbt"}},"operation":"getEnsAddress","shortMessage":"network does not support ENS"}
+[00:12:18.190] Browser LOG     Đang Approve...
+[00:12:18.190] Browser LOG     Đang approve 0.0001 token cho bridge: 0x1e8e474701bbb119017c5659266087fa20470a77dc42ce1a127f645646c3e090
+[00:12:18.190] Browser ERROR   Lỗi khi Approve: {"code":"UNSUPPORTED_OPERATION","info":{"network":{"chainId":"97","name":"bnbt"}},"operation":"getEnsAddress","shortMessage":"network does not support ENS"}
+[00:12:18.190] Browser ERROR   Lỗi: {"code":"UNSUPPORTED_OPERATION","info":{"network":{"chainId":"97","name":"bnbt"}},"operation":"getEnsAddress","shortMessage":"network does not support ENS"}
+[00:14:05.870] Server  LOG     ✓ Compiled in 15ms
+[00:14:09.007] Browser LOG     Đang Approve...
+[00:14:09.007] Browser LOG     Đang approve 0.0001 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:14:18.679] Browser LOG     Transaction Hash: 0x72c722a4419ff864ea39ffe4052fdfd1ee52c3437a93eb1db4f1471e29f09fbb
+[00:14:19.381] Browser LOG     Approve thành công!
+[00:14:19.381] Browser LOG     Đang Bridge...
+[00:14:35.708] Browser ERROR   Lỗi: {"action":"estimateGas","code":"CALL_EXCEPTION","data":"0xc97d95cf","info":{"error":{"code":-32603,"data":{"cause":null,"code":3,"data":"0xc97d95cf","message":"execution reverted: 0xc97d95cf"},"message":"Internal JSON-RPC error."},"payload":{"id":5,"jsonrpc":"2.0","method":"eth_estimateGas","params":[{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000005af3107a4000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","to":"0xec373e79fe65b09117e7a80058fd42c51f7e3289","value":"0x0"}]}},"invocation":null,"reason":null,"revert":null,"shortMessage":"execution reverted (unknown custom error)","transaction":{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000005af3107a4000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xCDEC43D8c276F14466f196D61453A314bc28c0ac","to":"0xeC373E79FE65B09117e7a80058fd42c51f7E3289"}}
+[00:15:37.719] Browser LOG     Đang Approve...
+[00:15:37.719] Browser LOG     Đang approve 0.0001 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:16:01.416] Browser ERROR   Lỗi khi Approve: {"action":"sendTransaction","code":"ACTION_REJECTED","info":{"error":{"code":4001,"data":{"cause":null,"location":"confirmation"},"message":"ethers-user-denied: MetaMask Tx Signature: User denied transaction signature."},"payload":{"id":6,"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"data":"0x095ea7b3000000000000000000000000ec373e79fe65b09117e7a80058fd42c51f7e328900000000000000000000000000000000000000000000000000005af3107a4000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","gas":"0x6856","to":"0xa801da100bf16d07f668f4a49e1f71fc54d05177"}]}},"reason":"rejected","shortMessage":"user rejected action"}
+[00:16:01.416] Browser ERROR   Lỗi: {"action":"sendTransaction","code":"ACTION_REJECTED","info":{"error":{"code":4001,"data":{"cause":null,"location":"confirmation"},"message":"ethers-user-denied: MetaMask Tx Signature: User denied transaction signature."},"payload":{"id":6,"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"data":"0x095ea7b3000000000000000000000000ec373e79fe65b09117e7a80058fd42c51f7e328900000000000000000000000000000000000000000000000000005af3107a4000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","gas":"0x6856","to":"0xa801da100bf16d07f668f4a49e1f71fc54d05177"}]}},"reason":"rejected","shortMessage":"user rejected action"}
+[00:18:09.628] Browser LOG     Đang Approve...
+[00:18:09.628] Browser LOG     Đang approve 0.0001 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:18:22.917] Browser ERROR   Lỗi khi Approve: {"action":"sendTransaction","code":"ACTION_REJECTED","info":{"error":{"code":4001,"data":{"cause":null,"location":"confirmation"},"message":"ethers-user-denied: MetaMask Tx Signature: User denied transaction signature."},"payload":{"id":6,"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"data":"0x095ea7b3000000000000000000000000ec373e79fe65b09117e7a80058fd42c51f7e328900000000000000000000000000000000000000000000000000005af3107a4000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","gas":"0x6856","to":"0xa801da100bf16d07f668f4a49e1f71fc54d05177"}]}},"reason":"rejected","shortMessage":"user rejected action"}
+[00:18:22.917] Browser ERROR   Lỗi: {"action":"sendTransaction","code":"ACTION_REJECTED","info":{"error":{"code":4001,"data":{"cause":null,"location":"confirmation"},"message":"ethers-user-denied: MetaMask Tx Signature: User denied transaction signature."},"payload":{"id":6,"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"data":"0x095ea7b3000000000000000000000000ec373e79fe65b09117e7a80058fd42c51f7e328900000000000000000000000000000000000000000000000000005af3107a4000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","gas":"0x6856","to":"0xa801da100bf16d07f668f4a49e1f71fc54d05177"}]}},"reason":"rejected","shortMessage":"user rejected action"}
+[00:18:23.796] Browser LOG     Đang Approve...
+[00:18:23.796] Browser LOG     Đang approve 0.0001 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:18:35.140] Browser LOG     Transaction Hash: 0xd15dd2cf65511225c19b0a7b96b3b1bea62f763b3bb04902871e4074aa77f891
+[00:18:36.608] Browser LOG     Approve thành công!
+[00:18:36.608] Browser LOG     Đang Bridge...
+[00:18:52.887] Browser ERROR   Lỗi: {"action":"estimateGas","code":"CALL_EXCEPTION","data":"0xc97d95cf","info":{"error":{"code":-32603,"data":{"cause":null,"code":3,"data":"0xc97d95cf","message":"execution reverted: 0xc97d95cf"},"message":"Internal JSON-RPC error."},"payload":{"id":5,"jsonrpc":"2.0","method":"eth_estimateGas","params":[{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000005af3107a4000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","to":"0xec373e79fe65b09117e7a80058fd42c51f7e3289","value":"0x0"}]}},"invocation":null,"reason":null,"revert":null,"shortMessage":"execution reverted (unknown custom error)","transaction":{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000005af3107a4000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xCDEC43D8c276F14466f196D61453A314bc28c0ac","to":"0xeC373E79FE65B09117e7a80058fd42c51f7E3289"}}
+[00:19:50.746] Server  LOG     ✓ Compiled in 15ms
+[00:19:50.840] Server  LOG     ✓ Compiled in 17ms
+[00:19:51.027] Server  LOG     ✓ Compiled in 13ms
+[00:19:52.071] Server  LOG     ✓ Compiled in 12ms
+[00:19:52.196] Server  LOG     ✓ Compiled in 14ms
+[00:19:52.738] Server  LOG     ✓ Compiled in 15ms
+[00:19:52.938] Server  LOG     ✓ Compiled in 12ms
+[00:19:53.093] Server  LOG     ✓ Compiled in 11ms
+[00:19:53.435] Server  LOG     ✓ Compiled in 13ms
+[00:19:53.809] Server  LOG     ✓ Compiled in 14ms
+[00:19:54.011] Server  LOG     ✓ Compiled in 13ms
+[00:19:54.152] Server  LOG     ✓ Compiled in 12ms
+[00:19:54.324] Server  LOG     ✓ Compiled in 11ms
+[00:19:55.007] Server  LOG     ✓ Compiled in 12ms
+[00:19:55.209] Server  LOG     ✓ Compiled in 12ms
+[00:19:55.614] Server  LOG     ✓ Compiled in 12ms
+[00:19:56.487] Server  LOG     ✓ Compiled in 18ms
+[00:19:56.624] Browser ERROR   ./hooks/useBridge.ts:54:13
+Parsing ecmascript source code failed
+  52 |       // Gửi giao dịch
+  53 |       console.
+> 54 |       const tx = await contract.bridgeTokens(
+     |             ^^
+  55 |         token,
+  56 |         symbol,
+  57 |         amountParsed,
+
+Expected ';', '}' or <eof>
+
+Import traces:
+  Client Component Browser:
+    ./hooks/useBridge.ts [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./hooks/useBridge.ts [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:20:02.431] Server  LOG     ✓ Compiled in 16ms
+[00:20:02.591] Server  LOG     ✓ Compiled in 22ms
+[00:20:03.929] Server  LOG     ✓ Compiled in 12ms
+[00:20:05.060] Server  LOG     ✓ Compiled in 13ms
+[00:20:05.743] Server  LOG     ✓ Compiled in 17ms
+[00:20:06.586] Server  LOG     ✓ Compiled in 12ms
+[00:20:08.686] Server  LOG     ✓ Compiled in 13ms
+[00:20:08.827] Server  LOG     ✓ Compiled in 13ms
+[00:20:09.092] Server  LOG     ✓ Compiled in 11ms
+[00:20:09.452] Server  LOG     ✓ Compiled in 12ms
+[00:20:10.031] Server  LOG     ✓ Compiled in 13ms
+[00:20:10.622] Browser ERROR   ./hooks/useBridge.ts:53:25
+Parsing ecmascript source code failed
+  51 |
+  52 |       // Gửi giao dịch
+> 53 |       console.log(token.)
+     |                         ^
+  54 |       const tx = await contract.bridgeTokens(
+  55 |         token,
+  56 |         symbol,
+
+Expected ident
+
+Import traces:
+  Client Component Browser:
+    ./hooks/useBridge.ts [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./hooks/useBridge.ts [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:20:15.541] Server  LOG     ✓ Compiled in 12ms
+[00:20:18.386] Server  LOG     ✓ Compiled in 12ms
+[00:20:21.300] Server  LOG     ✓ Compiled in 11ms
+[00:20:29.844] Browser LOG     Đang Approve...
+[00:20:29.844] Browser LOG     Đang approve 0.0001 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:20:37.940] Browser LOG     Transaction Hash: 0xe23a6a724c601874ebac85515a095ce06ab911974a8ac0afc35071a0160b9be4
+[00:20:43.086] Browser LOG     Approve thành công!
+[00:20:43.086] Browser LOG     Đang Bridge...
+[00:20:43.086] Browser LOG     0xA801da100bF16D07F668F4A49E1f71fc54D05177 USDh 100000000000000 0xCDEC43D8c276F14466f196D61453A314bc28c0ac {"0":69,"1":86,"2":77,"3":45,"4":49,"5":49,"6":49,"7":53,"8":53,"9":49,"10":49,"11":49}
+[00:20:46.756] Browser ERROR   Lỗi: {"action":"estimateGas","code":"CALL_EXCEPTION","data":"0xc97d95cf","info":{"error":{"code":-32603,"data":{"cause":null,"code":3,"data":"0xc97d95cf","message":"execution reverted: 0xc97d95cf"},"message":"Internal JSON-RPC error."},"payload":{"id":5,"jsonrpc":"2.0","method":"eth_estimateGas","params":[{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000005af3107a4000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","to":"0xec373e79fe65b09117e7a80058fd42c51f7e3289","value":"0x0"}]}},"invocation":null,"reason":null,"revert":null,"shortMessage":"execution reverted (unknown custom error)","transaction":{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000005af3107a4000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xCDEC43D8c276F14466f196D61453A314bc28c0ac","to":"0xeC373E79FE65B09117e7a80058fd42c51f7E3289"}}
+[00:28:25.867] Browser LOG     Đang Approve...
+[00:28:25.867] Browser LOG     Đang approve 0.0001 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:28:33.620] Browser LOG     Transaction Hash: 0xc9c659e267d261e671d9e35a428448d894a5f7995ade90f88948a8125b7d10c1
+[00:28:35.311] Browser LOG     Approve thành công!
+[00:28:35.311] Browser LOG     Đang Bridge...
+[00:28:35.311] Browser LOG     0xA801da100bF16D07F668F4A49E1f71fc54D05177 USDh 100000000000000 0xCDEC43D8c276F14466f196D61453A314bc28c0ac {"0":69,"1":86,"2":77,"3":45,"4":49,"5":49,"6":49,"7":53,"8":53,"9":49,"10":49,"11":49}
+[00:31:44.705] Browser ERROR   Lỗi: {"action":"estimateGas","code":"CALL_EXCEPTION","data":"0xc97d95cf","info":{"error":{"code":-32603,"data":{"cause":null,"code":3,"data":"0xc97d95cf","message":"execution reverted: 0xc97d95cf"},"message":"Internal JSON-RPC error."},"payload":{"id":5,"jsonrpc":"2.0","method":"eth_estimateGas","params":[{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000005af3107a4000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","to":"0xec373e79fe65b09117e7a80058fd42c51f7e3289","value":"0x0"}]}},"invocation":null,"reason":null,"revert":null,"shortMessage":"execution reverted (unknown custom error)","transaction":{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000000005af3107a4000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xCDEC43D8c276F14466f196D61453A314bc28c0ac","to":"0xeC373E79FE65B09117e7a80058fd42c51f7E3289"}}
+[00:31:47.272] Browser LOG     Đang Approve...
+[00:31:47.272] Browser LOG     Đang approve 3 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:31:53.449] Browser LOG     Transaction Hash: 0x0278050f7758b9f3db1c50cfaa470f0ec40e6756cf44f33b486d8e1f49c061ad
+[00:31:55.085] Browser LOG     Approve thành công!
+[00:31:55.086] Browser LOG     Đang Bridge...
+[00:31:55.086] Browser LOG     0xA801da100bF16D07F668F4A49E1f71fc54D05177 USDh 3000000000000000000 0xCDEC43D8c276F14466f196D61453A314bc28c0ac {"0":69,"1":86,"2":77,"3":45,"4":49,"5":49,"6":49,"7":53,"8":53,"9":49,"10":49,"11":49}
+[00:32:01.984] Browser ERROR   Lỗi: {"action":"estimateGas","code":"CALL_EXCEPTION","data":"0xc97d95cf","info":{"error":{"code":-32603,"data":{"cause":null,"code":3,"data":"0xc97d95cf","message":"execution reverted: 0xc97d95cf"},"message":"Internal JSON-RPC error."},"payload":{"id":5,"jsonrpc":"2.0","method":"eth_estimateGas","params":[{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000029a2241af62c0000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","to":"0xec373e79fe65b09117e7a80058fd42c51f7e3289","value":"0x0"}]}},"invocation":null,"reason":null,"revert":null,"shortMessage":"execution reverted (unknown custom error)","transaction":{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000029a2241af62c0000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000045553446800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xCDEC43D8c276F14466f196D61453A314bc28c0ac","to":"0xeC373E79FE65B09117e7a80058fd42c51f7E3289"}}
+[00:32:09.149] Browser LOG     Đang Approve...
+[00:32:09.149] Browser LOG     Đang approve 3 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:32:17.672] Browser ERROR   Lỗi khi Approve: {"action":"sendTransaction","code":"ACTION_REJECTED","info":{"error":{"code":4001,"data":{"cause":null,"location":"confirmation"},"message":"ethers-user-denied: MetaMask Tx Signature: User denied transaction signature."},"payload":{"id":6,"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"data":"0x095ea7b3000000000000000000000000ec373e79fe65b09117e7a80058fd42c51f7e328900000000000000000000000000000000000000000000000029a2241af62c0000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","gas":"0x6862","to":"0xa801da100bf16d07f668f4a49e1f71fc54d05177"}]}},"reason":"rejected","shortMessage":"user rejected action"}
+[00:32:17.672] Browser ERROR   Lỗi: {"action":"sendTransaction","code":"ACTION_REJECTED","info":{"error":{"code":4001,"data":{"cause":null,"location":"confirmation"},"message":"ethers-user-denied: MetaMask Tx Signature: User denied transaction signature."},"payload":{"id":6,"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{"data":"0x095ea7b3000000000000000000000000ec373e79fe65b09117e7a80058fd42c51f7e328900000000000000000000000000000000000000000000000029a2241af62c0000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","gas":"0x6862","to":"0xa801da100bf16d07f668f4a49e1f71fc54d05177"}]}},"reason":"rejected","shortMessage":"user rejected action"}
+[00:35:41.707] Server  LOG     ✓ Compiled in 43ms
+[00:35:49.657] Browser LOG     Đang Approve...
+[00:35:49.657] Browser LOG     Đang approve 3 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:35:55.235] Browser LOG     Transaction Hash: 0xf3c206ef1a9eb3eaf740d6f25ceea9de48f2ac2ce347421289cf0b15f36596dc
+[00:35:56.548] Browser LOG     Approve thành công!
+[00:35:56.548] Browser LOG     Đang Bridge...
+[00:35:56.548] Browser LOG     0xA801da100bF16D07F668F4A49E1f71fc54D05177 USD.h 3000000000000000000 0xCDEC43D8c276F14466f196D61453A314bc28c0ac {"0":69,"1":86,"2":77,"3":45,"4":49,"5":49,"6":49,"7":53,"8":53,"9":49,"10":49,"11":49}
+[00:36:05.492] Browser ERROR   Lỗi: {"action":"estimateGas","code":"CALL_EXCEPTION","data":"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000","info":{"error":{"code":-32603,"data":{"cause":null,"code":3,"data":"0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000","message":"execution reverted: ERC20: transfer amount exceeds balance: 0x08c379a00000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000002645524332303a207472616e7366657220616d6f756e7420657863656564732062616c616e63650000000000000000000000000000000000000000000000000000"},"message":"Internal JSON-RPC error."},"payload":{"id":5,"jsonrpc":"2.0","method":"eth_estimateGas","params":[{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000029a2241af62c0000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000055553442e68000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xcdec43d8c276f14466f196d61453a314bc28c0ac","to":"0xec373e79fe65b09117e7a80058fd42c51f7e3289","value":"0x0"}]}},"invocation":null,"reason":"ERC20: transfer amount exceeds balance","revert":{"args":["ERC20: transfer amount exceeds balance"],"name":"Error","signature":"Error(string)"},"shortMessage":"execution reverted: \"ERC20: transfer amount exceeds balance\"","transaction":{"data":"0x1d4ae23f000000000000000000000000a801da100bf16d07f668f4a49e1f71fc54d0517700000000000000000000000000000000000000000000000000000000000000a000000000000000000000000000000000000000000000000029a2241af62c0000000000000000000000000000cdec43d8c276f14466f196d61453a314bc28c0ac00000000000000000000000000000000000000000000000000000000000000e000000000000000000000000000000000000000000000000000000000000000055553442e68000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c45564d2d31313135353131310000000000000000000000000000000000000000","from":"0xCDEC43D8c276F14466f196D61453A314bc28c0ac","to":"0xeC373E79FE65B09117e7a80058fd42c51f7E3289"}}
+[00:38:06.742] Browser LOG     Đang Approve...
+[00:38:06.742] Browser LOG     Đang approve 3 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:38:12.361] Browser LOG     Transaction Hash: 0x7512c99f992b8acafeed8f69337d7a6f140e6929d9c549a0c0609f19c61beddf
+[00:38:17.392] Browser LOG     Approve thành công!
+[00:38:17.393] Browser LOG     Đang Bridge...
+[00:38:17.393] Browser LOG     0xA801da100bF16D07F668F4A49E1f71fc54D05177 USD.h 3000000000000000000 0xCDEC43D8c276F14466f196D61453A314bc28c0ac {"0":69,"1":86,"2":77,"3":45,"4":49,"5":49,"6":49,"7":53,"8":53,"9":49,"10":49,"11":49}
+[00:42:00.714] Browser LOG     Đang Approve...
+[00:42:00.714] Browser LOG     Đang approve 3 token cho bridge: 0xec373e79fe65b09117e7a80058fd42c51f7e3289
+[00:42:10.857] Browser LOG     Transaction Hash: 0xd68d62575f5124a868523dc82e5191c5cd3e560bb5e4e29d53f16d0a043bad2d
+[00:42:11.566] Browser LOG     Approve thành công!
+[00:42:11.566] Browser LOG     Đang Bridge...
+[00:42:11.566] Browser LOG     0xA801da100bF16D07F668F4A49E1f71fc54D05177 USD.h 3000000000000000000 0xCDEC43D8c276F14466f196D61453A314bc28c0ac {"0":69,"1":86,"2":77,"3":45,"4":49,"5":49,"6":49,"7":53,"8":53,"9":49,"10":49,"11":49}
