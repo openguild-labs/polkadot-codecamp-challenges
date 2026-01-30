@@ -13,8 +13,8 @@ A decentralized exchange (DEX) implementation based on Uniswap V2's architecture
 
 Link contract: [Contract](./)
 
-- [ ] **Write scripts to Deploy a factory, pair, and ERC20 token contracts on Paseo Asset Hub**
-- [ ] **Write test cases** 
+- [x] **Write scripts to Deploy a factory, pair, and ERC20 token contracts on Paseo Asset Hub**
+- [x] **Write test cases** 
 
 
 ## Implementation UI Requirements 
@@ -23,12 +23,12 @@ Link UI sample: [UI](./frontend)
 
 Build the UI with features based on the requirements:
 
-- [ ] **Connect the frontend to Asset Hub using MetaMask and Web3 Tools ( Viem, Ethersjs)**
-- [ ] **Create Pool**
-- [ ] **Add liquidity**
-- [ ] **Remove Liquidity**
-- [ ] **Show all pools**
-- [ ] **Faucet tokens to tests**
+- [x] **Connect the frontend to Asset Hub using MetaMask and Web3 Tools ( Viem, Ethersjs)**
+- [x] **Create Pool**
+- [x] **Add liquidity**
+- [x] **Remove Liquidity**
+- [x] **Show all pools**
+- [x] **Faucet tokens to tests**
 
 ## Network Info
 

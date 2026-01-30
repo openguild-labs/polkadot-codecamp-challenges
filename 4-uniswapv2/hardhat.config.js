@@ -12,6 +12,7 @@ module.exports = {
     // Compiler configuration for PolkaVM
     resolc: {
         compilerSource: 'npm',
+        version: "0.2.0",
         settings: {
             optimizer: {
                 enabled: true,

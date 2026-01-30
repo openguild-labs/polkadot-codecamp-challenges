@@ -136,31 +136,31 @@ const WalletConnect: React.FC<WalletConnectProps> = ({ onConnect }) => {
   };
 
   return (
-    <div className="border border-pink-500 rounded-lg p-4 shadow-md bg-white text-pink-500 max-w-sm mx-auto">
-      {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+    <div className="bg-white border-2 border-purple-300 rounded-lg p-4 shadow-lg max-w-sm mx-auto">
+      {error && <p className="text-red-600 text-sm mb-3 bg-red-50 p-2 rounded-lg border border-red-300">{error}</p>}
 
       {!account ? (
         <button
           onClick={connectWallet}
-          className="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition"
+          className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-all shadow-md"
         >
           Connect Wallet
         </button>
       ) : (
-        <div className="flex flex-col items-center">
-          <span className="text-sm font-mono bg-pink-100 px-2 py-1 rounded-md text-pink-700">
+        <div className="flex flex-col items-center gap-3">
+          <span className="text-sm font-mono bg-purple-100 px-3 py-2 rounded-lg text-purple-700 border border-purple-300">
             {`${account.substring(0, 6)}...${account.substring(38)}`}
           </span>
           <button
             onClick={disconnectWallet}
-            className="mt-3 w-full bg-gray-200 hover:bg-gray-300 text-pink-500 py-2 px-4 rounded-lg transition"
+            className="mt-2 w-full bg-gray-200 hover:bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-lg transition-all"
           >
             Disconnect
           </button>
           {chainId !== passetHub.id && (
             <button
               onClick={switchNetwork}
-              className="mt-3 w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-lg transition"
+              className="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-2 px-4 rounded-lg transition-all"
             >
               Switch to Passet Hub
             </button>

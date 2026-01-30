@@ -1,0 +1,11 @@
+{
+	"network": "Paseo Asset Hub Testnet",
+	"rpcUrl": "https://testnet-passet-hub-eth-rpc.polkadot.io",
+	"tokens": {
+		"TokenA": "0xD6bbaDF338cD069DB13Cc0EA5b77D4FFF6BcCbA9",
+		"TokenB": "0x20fE69e45bb2C49B2fC251413378816666032105"
+	},
+	"factory": "0xf213009d6d3A48aE271CfB3bc8471d648ACC78b6",
+	"pair": "0x4773a1e18f4d527b6A034Eae3ccA0400F757f71B",
+	"deployer": "0xdEcac186f53C504d33DE164b8585a94D41573BB3"
+}
