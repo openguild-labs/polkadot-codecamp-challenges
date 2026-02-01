@@ -1,0 +1,19 @@
+# Build artifacts
+cache
+out
+broadcast
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Dependencies (optional - remove if you want to commit lib)
+lib
+
+# IDE
+.vscode
+.idea
+
+# OS
+.DS_Store
