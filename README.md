@@ -77,7 +77,8 @@ OpenGuild is a builder-driven community centered around Polkadot. OpenGuild is b
 - **Github:** [OpenGuild Labs](https://github.com/openguild-labs)
 - **Discord**: [Openguild Discord Channel](https://discord.gg/bcjMzxqtD7)
 
+## Participant Registration
 
-
-
-
+| Icon | Name | Github username | Your current occupation |
+| :--- | :--- | :--- | :--- |
+| 🦄 | Reedham Shah | Reedham06 | Student |
