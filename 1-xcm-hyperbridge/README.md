@@ -1,177 +1,155 @@
-# Challenge 1: Cross-chain Solidity Smart Contract with XCM + Hyperbridge
+# Challenge 1: Cross-chain Token Bridge with XCM + Hyperbridge
 
-## 🎯 Challenge Overview
+## My Submission
 
-Build a cross-chain token bridge using **Hyperbridge SDK** that enables ERC20 token transfers between different chains in the Polkadot ecosystem.
+- **Demo Video**: [Polkadot Codecamp Challenge 1 - Cross-Chain Token Bridge with XCM + Hyperbridge](https://youtu.be/jK-HwFqj-fE)
 
-In this challenge, you will:
-- Learn how Hyperbridge enables secure cross-chain communication
-- Interact with the `TokenGateway` for cross-chain transfers
-- Deploy and test your bridge on Polkadot testnets
+A cross-chain token bridge implementation using **Hyperbridge SDK** that enables ERC20 token transfers between Ethereum Sepolia and Paseo Asset Hub.
 
-## 📚 Background
+### Deployed Contracts (Paseo Asset Hub - Chain ID: 420420422)
 
-### What is Hyperbridge?
+| Contract         | Address                                      |
+| ---------------- | -------------------------------------------- |
+| MockTokenGateway | `0x5D9eaE096BF641258Be58677885F303B4Ff96468` |
+| TokenBridge      | `0xcBc807e1dd9314415b7cbAf1d3B843136bb37EC9` |
+| TestToken (TEST) | `0x136b7Aa6b01E66e035DCDD9868C3016116b69cA5` |
 
-[Hyperbridge](https://github.com/polytope-labs/hyperbridge-sdk) is a cross-chain interoperability protocol that enables secure message passing between different blockchain networks. It provides:
+## 🏗️ Project Structure
 
-- **Post Requests**: Send data across chains
-- **Get Requests**: Pull data from other chains  
-- **Token Transfers**: Bridge tokens using `TokenGateway` and `IntentGateway`
+```
+1-xcm-hyperbridge/
+├── contracts/           # Foundry smart contracts
+│   ├── src/
+│   │   └── TokenBridge.sol    # Main bridge contract
+│   ├── script/
+│   │   └── Deploy.s.sol       # Deployment script
+│   ├── test/
+│   │   └── TokenBridge.t.sol  # Unit tests (13/13 passed)
+│   ├── foundry.toml
+│   └── remappings.txt
+├── frontend/            # Next.js frontend
+│   └── src/
+│       ├── app/               # App router pages
+│       ├── components/        # React components
+│       │   ├── bridge-form.tsx
+│       │   ├── chain-selector.tsx
+│       │   ├── wallet-connect.tsx
+│       │   └── web3-provider.tsx
+│       └── lib/
+│           └── wagmi.ts       # Web3 configuration
+└── README.md
+```
 
-### Hyperbridge SDK Core Components
+## 🚀 Features
 
-The [@hyperbridge/core](https://github.com/polytope-labs/hyperbridge-sdk/tree/main/packages/core) package provides:
+### Smart Contracts
 
-| Component | Description |
-| --------- | ----------- |
-| `IHost` | Protocol host interface |
-| `IDispatcher` | Protocol dispatcher interface |
-| `IHandler` | Protocol message handler interface |
-| `HyperApp` | Abstract base contract for cross-chain apps |
-| `HyperFungibleToken` | ERC20 with gateway-restricted minting/burning |
-| `ITokenGateway` | Interface for cross-chain token transfers |
-| `IIntentGateway` | Interface for intent-based cross-chain orders |
+- **TokenBridge.sol** - Wrapper for Hyperbridge's `ITokenGateway`
+  - `bridgeTokens()` - Bridge tokens using `TeleportParams` struct
+  - `bridge()` - Simplified bridge with individual parameters
+  - `rescueTokens()` / `rescueNative()` - Emergency rescue functions
+  - SafeERC20 for secure token transfers
 
-## 🛠️ Getting Started
+### Frontend
 
-### Prerequisites
+- **Wallet Connection** - MetaMask integration via Wagmi
+- **Chain Selector** - Switch between Sepolia and Paseo Asset Hub
+- **Bridge Form** - Token amount, recipient address, transaction execution
+- **Transaction Status** - Real-time feedback on bridge operations
+
+## 📋 Prerequisites
 
 - Node.js >= 22
-- Foundry (for Solidity development)
-- pnpm
+- Foundry (for smart contracts)
+- npm
 
-### Setup
+## 🛠️ Setup & Run
 
-1. **Initialize your project**
-
-```bash
-mkdir hyperbridge-token-bridge
-cd hyperbridge-token-bridge
-forge init
-```
-
-2. **Install Hyperbridge SDK**
+### Smart Contracts
 
 ```bash
-forge install OpenZeppelin/openzeppelin-contracts
-forge install polytope-labs/hyperbridge-sdk
+cd contracts
+
+# Install dependencies
+forge install
+
+# Build
+forge build
+
+# Run tests
+forge test -vvv
 ```
 
-3. **Configure remappings** (add to `remappings.txt`)
+### Frontend
 
-```
-@hyperbridge/core/=lib/hyperbridge-sdk/packages/core/contracts/
-@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/
-```
+```bash
+cd frontend
 
-## 📝 Challenge Tasks
+# Install dependencies
+npm install
 
-### Task 1: Implement Cross-Chain Transfer Logic
-
-Create a contract that interacts with the TokenGateway for bridging:
-
-```solidity
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.17;
-
-import {ITokenGateway, TeleportParams} from "@hyperbridge/core/apps/TokenGateway.sol";
-import {StateMachine} from "@hyperbridge/core/libraries/StateMachine.sol";
-import {IERC20} from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-
-contract TokenBridge {
-    ITokenGateway public immutable tokenGateway;
-    address public immutable feeToken;
-    
-    constructor(address _tokenGateway, address _feeToken) {
-        tokenGateway = ITokenGateway(_tokenGateway);
-        feeToken = _feeToken;
-    }
-    
-    /// @notice Bridge tokens to another chain
-    /// @param token The token address to bridge
-    /// @param symbol The token symbol to bridge
-    /// @param amount The amount to bridge
-    /// @param recipient The recipient address on the destination chain
-    /// @param destChain The destination chain identifier
-    function bridgeTokens(
-        address token,
-        string memory symbol,
-        uint256 amount,
-        address recipient,
-        bytes memory destChain
-    ) external payable {
-        // Approve the gateway to spend tokens
-        IERC20(token).transferFrom(msg.sender, address(this), amount);
-        IERC20(token).approve(address(tokenGateway), amount);
-        IERC20(feeToken).approve(address(tokenGateway), type(uint256).max);
-        
-        // Initiate the cross-chain transfer
-        // Implementation depends on TokenGateway interface
-    }
-}
+# Run development server
+npm run dev
 ```
 
-### Task 2: Build a Simple Frontend
+Visit `http://localhost:3000`
 
-Create a basic UI to interact with your bridge:
-- Connect wallet (MetaMask, etc.)
-- Select source and destination chains
-- Input token amount and recipient
-- Execute bridge transaction
-- Display transaction status
+## 🧪 Test Results
 
-**Minimum supported network pairs (pick at least one):**
+```
+Ran 13 tests for test/TokenBridge.t.sol:TokenBridgeTest
+[PASS] test_BridgeTokens()
+[PASS] test_BridgeTokens_RevertUnknownAsset()
+[PASS] test_BridgeTokens_RevertZeroAmount()
+[PASS] test_Bridge_SimplifiedMethod()
+[PASS] test_Constructor()
+[PASS] test_Constructor_RevertZeroAddress()
+[PASS] test_GetGatewayParams()
+[PASS] test_GetTokenAddress()
+[PASS] test_Receive()
+[PASS] test_RescueNative()
+[PASS] test_RescueNative_RevertZeroAddress()
+[PASS] test_RescueTokens()
+[PASS] test_RescueTokens_RevertNotOwner()
 
-| Source Network     | Destination Network |
-| ------------------ | ------------------- |
-| Paseo              | ETH Sepolia         |
-| BSC Testnet        | ETH Sepolia         |
-| Optimism Sepolia   | ETH Sepolia         |
+Suite result: ok. 13 passed; 0 failed; 0 skipped
+```
 
-### Task 3: Deploy and Test
-- Write unit tests
-- Deploy your contracts to testnets
-- Document deployment addresses and test results
+## 📦 Deployment
 
+### Environment Setup
 
-## 📋 Submission Requirements
+Create `.env` file in `contracts/`:
 
-Your submission should include:
+```
+PRIVATE_KEY=your_private_key
+TOKEN_GATEWAY_ADDRESS=0x...  # Hyperbridge TokenGateway address
+SEPOLIA_RPC_URL=https://eth-sepolia.g.alchemy.com/v2/your_key
+```
 
-1. **Smart Contracts**
-   - [ ] `TokenBridge.sol` - Bridge logic contract
-   - [ ] Deployment scripts
-   - [ ] Bridge token script
+### Deploy to Testnet
 
-2. **Documentation**
-   - [ ] README explaining your implementation
-   - [ ] Deployment addresses
+```bash
+cd contracts
+source .env
+forge script script/Deploy.s.sol --rpc-url sepolia --broadcast
+```
 
-3. **Testing**
-   - [ ] Unit tests for `TokenBridge.sol` contract
+## 🌐 Supported Networks
 
-4. **Frontend**
-   - [ ] Basic UI for bridging tokens
-   - [ ] Screenshots of your UI in action
-   - [ ] Accessible Recording Link 
-   - [ ] Minimum supported network pairs (pick at least one)
+| Network          | Chain ID  | Type    |
+| ---------------- | --------- | ------- |
+| Ethereum Sepolia | 11155111  | Testnet |
+| Paseo Asset Hub  | 420420422 | Testnet |
+
+## 📚 Tech Stack
+
+- **Smart Contracts**: Solidity 0.8.20, Foundry, Hyperbridge SDK, OpenZeppelin
+- **Frontend**: Next.js 15, React 19, TypeScript, TailwindCSS, shadcn/ui
+- **Web3**: Wagmi, Viem, TanStack Query
 
 ## 🔗 Resources
 
-### Hyperbridge Documentation
-- [Hyperbridge SDK GitHub](https://github.com/polytope-labs/hyperbridge-sdk)
-- [@hyperbridge/core Package](https://github.com/polytope-labs/hyperbridge-sdk/tree/main/packages/core)
-- [HyperFungibleToken Contract](https://github.com/polytope-labs/hyperbridge-sdk/blob/main/packages/core/contracts/apps/HyperFungibleToken.sol)
-
-### Hyperbridge Resources
-- [HyperBridge Docs](https://docs.hyperbridge.network/)
-- [Deployed Contract](https://docs.hyperbridge.network/developers/explore/configurations/testnet)
-
-- [XCM](https://wiki.polkadot.com/learn/learn-xcm/)
-
-### Solidity & Foundry
+- [Hyperbridge Documentation](https://docs.hyperbridge.network/)
+- [Hyperbridge SDK](https://github.com/polytope-labs/hyperbridge-sdk)
 - [Foundry Book](https://book.getfoundry.sh/)
-- [OpenZeppelin Contracts](https://docs.openzeppelin.com/contracts)
-
-

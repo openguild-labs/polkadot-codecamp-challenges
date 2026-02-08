@@ -1,17 +1,19 @@
 # Full-stack development with Scaffold DOT
 
+## My Submission
+
+- **Demo Video**: [Polkadot Codecamp Challenge 3 - ERC20 & ERC721](https://youtu.be/d34JqEFFmUg)
+- **Scaffold DOT Fork**: [https://github.com/rifuki/scaffold-dot](https://github.com/rifuki/scaffold-dot)
 
 ## Introduction
 
 Scaffold DOT is a similar tool to [scaffold-eth-2](https://github.com/scaffold-eth/scaffold-eth-2) that helps new Web3 Solidity developers get started with full-stack development. Scaffold DOT is specifically designed for PolkaVM, supporting local node execution and an explorer. Developers can easily check and deploy smart contracts, then use the UI to interact with them seamlessly.
 
+## How to use
 
-## How to use 
-
-### Step 1: Fork the scaffold-dot (https://github.com/scaffold-dot/scaffold-dot) 
+### Step 1: Fork the scaffold-dot (https://github.com/scaffold-dot/scaffold-dot)
 
 ![Fork the repository](images/fork.png)
-
 
 ### Step 2
 
@@ -19,10 +21,10 @@ Scaffold DOT is a similar tool to [scaffold-eth-2](https://github.com/scaffold-e
 git clone https://github.com/<your github name>/scaffold-dot
 ```
 
-
-### Step 3 : Install dependences 
+### Step 3 : Install dependences
 
 > **Note:** Make sure your node version > 22+
+
 ```
 yarn install
 ```
@@ -39,11 +41,10 @@ yarn chain
 yarn rpc
 ```
 
-
 ### Step 6: On a third terminal, deploy the test default contract:
 
 ```
-yarn deploy 
+yarn deploy
 ```
 
 ### Step 7: On a fourth terminal, start your NextJS app:
@@ -54,20 +55,16 @@ yarn start
 
 ### Step 8: Request native tokens using the faucet icon in the top right corner
 
-
 ![Faucet ](images/faucet.png)
 
-
-### Step 9: Use READ/ WRITE Contract  
+### Step 9: Use READ/ WRITE Contract
 
 ![Read and Write](images/read_write.png)
 
+## Requirements
 
-## Requirements 
-
-- [ ] **Add ERC20 example**
-- [ ] **Add ERC721 examples**
-
+- [x] **Add ERC20 example**
+- [x] **Add ERC721 examples**
 
 ### Example UI
 
@@ -107,15 +104,14 @@ cocdap@Hos-MacBook-Pro scaffold-dot % yarn deploy
 📋 Available contracts: Counter, YourContract
 ```
 
-- Go to `UI Debug` to check function 
+- Go to `UI Debug` to check function
 
-## Submission Requirements 
+## Submission Requirements
 
-- [ ] **Accessible video recording link demonstrating ERC20 and ERC721 examples on Debug Scaffold DOT**
+- [x] **Accessible video recording link demonstrating ERC20 and ERC721 examples on Debug Scaffold DOT**
 
-
-## Resources 
+## Resources
 
 ## Bugs & Issues
 
-If you encounter any bugs or have suggestions for improvements, please [raise an issue](https://github.com/scaffold-dot/scaffold-dot) on GitHub and ping me `CocDap` 
+If you encounter any bugs or have suggestions for improvements, please [raise an issue](https://github.com/scaffold-dot/scaffold-dot) on GitHub and ping me `CocDap`
