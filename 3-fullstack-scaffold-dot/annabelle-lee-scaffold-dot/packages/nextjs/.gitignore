@@ -1,0 +1,18 @@
+# ============================================
+# Next.js package-specific .gitignore
+# Common ignores are in root .gitignore
+# ============================================
+
+# Testing
+/coverage
+
+# Next.js build outputs
+/.next/
+/out/
+.vercel
+
+# Production build
+/build
+
+# IPFS upload config
+ipfs-upload.config.json

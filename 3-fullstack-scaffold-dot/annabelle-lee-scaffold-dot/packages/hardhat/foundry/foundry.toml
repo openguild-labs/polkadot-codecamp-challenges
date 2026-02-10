@@ -1,0 +1,23 @@
+[profile.default]
+src = "../contracts"
+script = "script"
+out = "out"
+libs = ["lib"]
+remappings = [
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "@forge-std/=lib/forge-std/src/",
+    "forge-std/=lib/forge-std/src/",
+    "@contracts/=../contracts/"
+]
+
+optimizer = true
+optimizer_runs = 200
+via_ir = false
+
+[rpc_endpoints]
+localNode = "http://127.0.0.1:8545"
+passetHub = "https://testnet-passet-hub-eth-rpc.polkadot.io"
+kusamaHub = "https://kusama-asset-hub-eth-rpc.polkadot.io"
+
+[etherscan]
+passetHub = { key = "${ETHERSCAN_API_KEY}" }

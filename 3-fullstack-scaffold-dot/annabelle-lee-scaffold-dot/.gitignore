@@ -1,0 +1,67 @@
+# ============================================
+# Root-level .gitignore for Scaffold-DOT
+# Package-specific ignores are in packages/*/.gitignore
+# ============================================
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Yarn
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+
+# ESLint
+.eslintcache
+
+# Misc
+.DS_Store
+*.pem
+
+# IDE
+.vscode
+.idea
+
+# CLI
+dist
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ============================================
+# Project-specific ignores
+# ============================================
+
+# Hardhat-Polkadot
+/packages/hardhat/artifacts-pvm/*
+/packages/hardhat/cache-pvm/*
+packages/hardhat/ignition/deployments
+
+# Asset Hub binaries
+packages/asset-hub-pvm/bin/
+
+# Next.js generated contracts
+packages/nextjs/contracts/deployedContracts.ts
+
+# Foundry build artifacts (regenerable)
+packages/hardhat/foundry/broadcast/
+packages/hardhat/foundry/cache/
+# Note: packages/hardhat/foundry/out/ is kept as it contains compiled artifacts needed for deployment

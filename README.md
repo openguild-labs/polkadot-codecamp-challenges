@@ -63,6 +63,12 @@ git commit -m "<Your Name> | Register for Polkadot Codecamp"
 
 </div>
 
+## Participant Registration
+
+| 🦄 | Name | Github username | Your current occupation |
+| --- | ---- | --------------- | ----------------------- |
+| 🦄 | Annabelle Lee | Funghi88 | Designer + Entry Level Engineer + Vibe Coder |
+
 ## 👉 Support Channels
 
 - [Discord OpenGuild](https://github.com/openguild-labs)

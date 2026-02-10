@@ -1,0 +1,26 @@
+# ============================================
+# Hardhat package-specific .gitignore
+# Common ignores are in root .gitignore
+# ============================================
+
+# Coverage
+coverage
+coverage.json
+
+# TypeChain
+typechain
+typechain-types
+
+# Hardhat build artifacts
+cache
+artifacts
+
+# zkSync files
+artifacts-zk
+cache-zk
+
+# Deployments
+deployments/localhost
+
+# Temporary files
+temp

@@ -65,8 +65,8 @@ yarn start
 
 ## Requirements 
 
-- [ ] **Add ERC20 example**
-- [ ] **Add ERC721 examples**
+- [x] **Add ERC20 example** ✅ Completed by Annabelle Lee
+- [x] **Add ERC721 examples** ✅ Completed by Annabelle Lee
 
 
 ### Example UI
@@ -112,6 +112,27 @@ cocdap@Hos-MacBook-Pro scaffold-dot % yarn deploy
 ## Submission Requirements 
 
 - [ ] **Accessible video recording link demonstrating ERC20 and ERC721 examples on Debug Scaffold DOT**
+
+## Completed Implementation
+
+**By: Annabelle Lee (Funghi88)**
+
+This challenge has been completed with:
+- ✅ ERC20 token contract implementation
+- ✅ ERC721 NFT contract implementation  
+- ✅ Full deployment to Paseo Asset Hub testnet
+- ✅ Debug UI integration with ERC20 and ERC721 contracts
+- ✅ CI/CD pipeline setup with GitHub Actions
+- ✅ Foundry-based development workflow
+
+**Project Location:** `annabelle-lee-scaffold-dot/`
+
+**Deployed Contracts (Paseo Testnet):**
+- ERC20Token: `0xED940451B58fDa5c5D1074A687c9a4486D1E8cd7`
+- ERC721Token: `0x13e3FE2e4b4869aB59a342fD0e2205489CF23513`
+- YourContract: `0x08Fc69fF90c71037B3Cfc57a893B4da079B8EbBE`
+
+**Repository:** https://github.com/Funghi88/scaffold-dot
 
 
 ## Resources 

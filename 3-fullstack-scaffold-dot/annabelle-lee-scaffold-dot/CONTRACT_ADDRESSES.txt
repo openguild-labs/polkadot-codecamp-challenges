@@ -1,0 +1,20 @@
+📋 Current Deployed Contract Addresses
+
+=== Paseo Asset Hub Testnet (Chain ID: 420420422) ===
+Network: Paseo Asset Hub (Testnet)
+RPC: https://testnet-passet-hub-eth-rpc.polkadot.io
+Explorer: https://blockscout-passet-hub.parity-testnet.parity.io
+
+ERC20Token:    0xED940451B58fDa5c5D1074A687c9a4486D1E8cd7
+ERC721Token:   0x13e3FE2e4b4869aB59a342fD0e2205489CF23513
+YourContract:  0x08Fc69fF90c71037B3Cfc57a893B4da079B8EbBE
+
+Deployer Address: 0x696d27f016F853DA40313A396CD0f565698cAb6f
+
+=== Local Node (Chain ID: 420420420) ===
+ERC20Token:    0xe78A45427B4797ae9b1852427476A956037B5bC2
+ERC721Token:   0xb91C2eeaA0c475115069a6ED4bc601337a22788E
+YourContract:  0xad856F238CBeafd064b80D12EadAea3981fB21B5
+
+Note: Paseo testnet addresses are the latest production deployment.
+      Check packages/nextjs/contracts/deployedContracts.ts for the most current addresses.
