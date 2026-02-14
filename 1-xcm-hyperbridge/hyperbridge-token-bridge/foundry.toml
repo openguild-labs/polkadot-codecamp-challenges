@@ -2,5 +2,12 @@
 src = "src"
 out = "out"
 libs = ["lib"]
+solc = "0.8.28"
+optimizer = true
+optimizer_runs = 200
 
-# See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
+remappings = [
+    "@hyperbridge/core/=lib/hyperbridge-sdk/packages/core/contracts/",
+    "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+    "forge-std/=lib/forge-std/src/",
+]
