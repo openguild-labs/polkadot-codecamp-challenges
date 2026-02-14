@@ -113,6 +113,10 @@ cocdap@Hos-MacBook-Pro scaffold-dot % yarn deploy
 
 - [ ] **Accessible video recording link demonstrating ERC20 and ERC721 examples on Debug Scaffold DOT**
 
+## My Submission
+
+- **Demo Video**: [https://youtu.be/tKbpPbqvguI](https://youtu.be/tKbpPbqvguI)
+- **Forked at**: [https://github.com/wildanrhmn/scaffold-dot](https://github.com/wildanrhmn/scaffold-dot)
 
 ## Resources 
 
