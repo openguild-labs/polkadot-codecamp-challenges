@@ -1,3 +1,9 @@
+## Demo & Deployment
+
+**Demo Video:** [Watch Demo](https://youtu.be/hgxu7l1c8UU)
+
+**Network Involved:** Paseo AssetHub & Paseo
+
 # Challenge 2: Polkadot Agent Kit
 
 Use the `@polkadot-agent-kit` tool to build AI-powered cross-chain applications. Integrate AI capabilities with Polkadot blockchain functionality.

@@ -1,66 +1,62 @@
-## Foundry
+# Hyperbridge Token Bridge
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+Cross-chain token bridge using the Hyperbridge SDK. Bridges ERC20 tokens between **BSC Testnet** and **ETH Sepolia** via Hyperbridge's `TokenGateway.teleport()`.
 
-Foundry consists of:
+## Architecture
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- **TokenBridge.sol** - Wrapper contract that transfers tokens from the user, approves the TokenGateway, builds `TeleportParams`, and calls `gateway.teleport()`.
+- **Frontend** - React + Vite app with RainbowKit wallet connection, chain selector, and bridge form.
 
-## Documentation
+## Contracts
 
-https://book.getfoundry.sh/
+| Contract | Description |
+|----------|-------------|
+| `src/TokenBridge.sol` | Main bridge contract wrapping TokenGateway |
+| `script/DeployTokenBridge.s.sol` | Deployment script for testnet |
+| `script/BridgeTokens.s.sol` | Script to execute a bridge transaction |
+| `test/TokenBridge.t.sol` | Unit tests with mock TokenGateway |
 
-## Usage
+## Testnet Addresses
 
-### Build
+| Network | TokenGateway | FeeToken |
+|---------|-------------|----------|
+| BSC Testnet (97) | `0xFcDa26cA021d5535C3059547390E6cCd8De7acA6` | `0xA801da100bF16D07F668F4A49E1f71fc54D05177` |
+| ETH Sepolia (11155111) | `0xFcDa26cA021d5535C3059547390E6cCd8De7acA6` | `0xA801da100bF16D07F668F4A49E1f71fc54D05177` |
 
-```shell
-$ forge build
+## Setup
+
+```bash
+# Initialize submodules
+git submodule update --init --recursive
+
+# Build contracts
+cd hyperbridge-token-bridge
+forge build
+
+# Run tests
+forge test -v
+
+# Deploy (set PRIVATE_KEY env var)
+forge script script/DeployTokenBridge.s.sol --rpc-url <RPC_URL> --broadcast --private-key $PRIVATE_KEY
 ```
 
-### Test
+## Frontend
 
-```shell
-$ forge test
+```bash
+cd ../frontend
+npm install
+npm run dev
 ```
 
-### Format
+Open http://localhost:5173 to use the bridge UI.
 
-```shell
-$ forge fmt
-```
+## Tests
 
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+7 unit tests covering:
+- Constructor initialization
+- Bridge with native payment
+- Bridge with fee token payment
+- Token transfer verification
+- Event emission
+- Destination chain encoding
+- Revert on missing approval
