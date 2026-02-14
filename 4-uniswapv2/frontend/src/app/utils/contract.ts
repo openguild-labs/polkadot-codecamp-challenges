@@ -1,25 +1,10 @@
-import { getContract } from 'viem';
-import { publicClient, getWalletClient } from './viem';
-import StorageABI from '../../abis/Storage.json';
+import FactoryABI from '../../../abis/UniswapV2Factory.json';
+import PairABI from '../../../abis/UniswapV2Pair.json';
+import ERC20ABI from '../../../abis/ERC20.json';
 
-export const CONTRACT_ADDRESS = '0x58053f0e8ede1a47a1af53e43368cd04ddcaf66f';
-export const CONTRACT_ABI = StorageABI;
+// Contract addresses - UPDATE THESE after deployment
+export const FACTORY_ADDRESS = '0x7D42F4B107EF6F665Fdb4fAD293f619a7F6111Fa' as `0x${string}`;
+export const TOKEN_A_ADDRESS = '0x6931f210c23d2aDDd759f9429A0866A1F4A25e61' as `0x${string}`;
+export const TOKEN_B_ADDRESS = '0xa5cdE98F436B63a2654b9256B8c768c526c671A7' as `0x${string}`;
 
-// Create a function to get a contract instance for reading
-export const getContractInstance = () => {
-  return getContract({
-    address: CONTRACT_ADDRESS,
-    abi: CONTRACT_ABI,
-    client: publicClient,
-  });
-};
-
-// Create a function to get a contract instance with a signer for writing
-export const getSignedContract = async () => {
-  const walletClient = await getWalletClient();
-  return getContract({
-    address: CONTRACT_ADDRESS,
-    abi: CONTRACT_ABI,
-    client: walletClient,
-  });
-};
+export { FactoryABI, PairABI, ERC20ABI };

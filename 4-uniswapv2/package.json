@@ -23,17 +23,32 @@
   "author": "Polkadot",
   "license": "MIT",
   "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.1.0",
+    "@nomicfoundation/hardhat-ethers": "^3.1.0",
+    "@nomicfoundation/hardhat-ignition-ethers": "^3.0.7",
+    "@nomicfoundation/hardhat-network-helpers": "^3.0.3",
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.0",
     "@parity/hardhat-polkadot": "^0.1.9",
+    "@typechain/ethers-v6": "^0.5.1",
+    "@typechain/hardhat": "^9.1.0",
+    "@types/chai": "^5.2.3",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^24.10.1",
+    "chai": "^6.2.2",
     "dockerode": "^4.0.9",
     "dotenv": "^17.2.3",
-    "hardhat": "^2.22.0",
+    "ethers": "^6.14.0",
+    "hardhat": "^2.26.0",
+    "hardhat-gas-reporter": "^2.3.0",
     "prompts": "^2.4.2",
     "solc": "0.8.26",
+    "solidity-coverage": "^0.8.17",
+    "typechain": "^8.3.2",
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "run-container": "^2.0.12",
     "viem": "^2.23.6"
   }
 }

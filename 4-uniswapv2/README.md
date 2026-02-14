@@ -1,3 +1,19 @@
+## Demo & Deployment
+
+**Demo Video:** [Watch Demo](https://youtu.be/fbtcO6YA_fU)
+
+**Network:** Polkadot Hub TestNet (Chain ID: 420420417)
+
+**Deployed Contract Addresses:**
+
+| Contract | Address |
+|----------|---------|
+| UniswapV2Factory | `0x7D42F4B107EF6F665Fdb4fAD293f619a7F6111Fa` |
+| Token A (TKA) | `0x6931f210c23d2aDDd759f9429A0866A1F4A25e61` |
+| Token B (TKB) | `0xa5cdE98F436B63a2654b9256B8c768c526c671A7` |
+| TKA/TKB Pair | `0x6dfBf4D4203EE3E6cDF9579fd482aDa117d44F5b` |
+
+---
 
 ## Challenge details
 A decentralized exchange (DEX) implementation based on Uniswap V2's architecture, adapted for Polkadot Asset Hub, enabling automated market making and token swaps with liquidity pools.

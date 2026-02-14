@@ -1,14 +1,9 @@
-import { createPublicClient, http, createWalletClient, custom } from 'viem'
+import { createPublicClient, http, createWalletClient, custom, type Chain } from 'viem'
 import 'viem/window';
 
-
-const transport = http('https://eth-rpc-testnet.polkadot.io/')
-
-// Configure the Passet Hub chain
-export const passetHub = {
+export const polkadotHubTestnet: Chain = {
   id: 420420417,
-  name: 'Polkadot Hub Testnet ',
-  network: 'polkadot-hub-testnet',
+  name: 'Polkadot Hub Testnet',
   nativeCurrency: {
     decimals: 18,
     name: 'PAS',
@@ -19,22 +14,31 @@ export const passetHub = {
       http: ['https://eth-rpc-testnet.polkadot.io/'],
     },
   },
-} as const
+  blockExplorers: {
+    default: {
+      name: 'Blockscout',
+      url: 'https://blockscout-testnet.polkadot.io',
+    },
+  },
+}
 
-// Create a public client for reading data
+// Keep backward compatibility
+export const passetHub = polkadotHubTestnet
+
+const transport = http('https://eth-rpc-testnet.polkadot.io/')
+
 export const publicClient = createPublicClient({
-  chain: passetHub,
-  transport
+  chain: polkadotHubTestnet,
+  transport,
 })
 
-// Create a wallet client for signing transactions
 export const getWalletClient = async () => {
   if (typeof window !== 'undefined' && window.ethereum) {
-    const [account] = await window.ethereum.request({ method: 'eth_requestAccounts' });
+    const [account] = await window.ethereum.request({ method: 'eth_requestAccounts' }) as string[];
     return createWalletClient({
-      chain: passetHub,
+      chain: polkadotHubTestnet,
       transport: custom(window.ethereum),
-      account,
+      account: account as `0x${string}`,
     });
   }
   throw new Error('No Ethereum browser provider detected');
